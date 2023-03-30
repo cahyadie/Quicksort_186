@@ -38,3 +38,26 @@ void  swap(int x, int y)
 	arr[x] = arr[y];
 	arr[y] = temp;
 }
+
+void q_short(int low, int high)
+{
+	int pivot, i, j;
+	if (low > high)
+		return;
+
+	i = low + 1;
+	j = high;
+
+	pivot = arr[low];
+
+	while (i <= j)
+	{
+		while ((arr[i] <= pivot) && (i <= high))
+		{
+			i++;
+			cmp_count++;
+		}
+		cmp_count++;
+		if (i < j)
+	}
+}
