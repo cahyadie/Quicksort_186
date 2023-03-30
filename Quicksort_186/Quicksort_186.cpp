@@ -30,7 +30,7 @@ void input() {
 	}
 }
 
-void  swap(int x, int y)
+void swap(int x, int y)
 {
 	int temp;
 
@@ -45,10 +45,12 @@ void q_short(int low, int high)
 	if (low > high)
 		return;
 
+	pivot = arr[low];
+
 	i = low + 1;
 	j = high;
 
-	pivot = arr[low];
+
 
 	while (i <= j)
 	{
@@ -59,7 +61,7 @@ void q_short(int low, int high)
 		}
 		cmp_count++;
 
-		while ((arr[i] <= pivot) && (low))
+		while ((arr[j] > pivot) && (j >= low))
 		{
 			j--;
 			cmp_count++;
@@ -82,9 +84,9 @@ void q_short(int low, int high)
 }
 
 void display() {
-	cout << "\n-----------=" << endl;
+	cout << "\n----------" << endl;
 	cout << "Sorted Array" << endl;
-	cout << "------------" << endl;
+	cout << "\n----------" << endl;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -103,5 +105,6 @@ int main()
 	q_short(0, n - 1);
 	display();
 	system("pause");
+	
 	return 0;
 }
